@@ -1,0 +1,796 @@
+<!-- ref: https://www.londonlibrary.co.uk/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London Library</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="/favicon_io/android-chrome-192x192.png">
+    <style>
+         a:-webkit-any-link {    
+        cursor: pointer;   
+        }
+        .logo {
+            width: 110px;
+            height: 110px;
+            margin-right: 15px;
+            position: relative;
+        }
+        .home {
+            display: block;
+            flex-grow: 1;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        .home:hover {
+            opacity: .8;
+        }
+        .home:hover .title1{
+            background-color: #5fcec8;
+            border: 1px solid #5fcec8;
+        }
+
+        header{
+            padding: 15px 0;
+        }
+        .heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+            width: 100%;
+        }
+
+       
+        .heading h2{
+            font-size: 38px;
+            letter-spacing: 1px;
+            font-weight: 800;            
+        }
+        .heading a:hover{
+            text-decoration: none;
+        }
+        .all-menu{            
+            flex-direction: column;
+            width: 87%;
+            padding: 0;
+            height: 110px;
+        }
+        .sub-menu{
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .sub-menu ul{
+            font-size: 14px;
+            text-align: right;
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            height: 48px;
+        }
+        .sub-menu ul li{
+            font-weight: normal;
+            text-transform: initial;
+            letter-spacing: 0;
+            font-size: 14px;
+            padding: 0 10px; 
+        }
+        .sub-menu ul li a{
+            text-decoration: none;
+            color: #666;
+        }
+        .sub-menu ul li a:hover{
+            text-decoration: none;
+            color: #000;
+        }
+        .main-menu{
+            width: 100%;
+            font-size: 18px;
+            padding: 0;
+            align-self: flex-end;
+            height: 54px;
+
+        }
+        .drop{
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: 300px;
+        }
+        .text{
+            width: 40%;
+            text-align: left;
+            padding: 40px;
+            background: #5fcec8;
+            z-index: 1;
+            position: relative;
+            color: #fff;
+        }
+        .text h2{            
+            font-size: 42px;
+            text-transform: uppercase;
+            /* line-height: 100%; */
+            margin-top: 0;
+            line-height: 35px;
+            font-weight: 800;
+            margin: 15px 0;
+        }
+        .text p{
+            font-size: 16px;
+            color: #000;
+            line-height: 25px;
+            margin-top: 0;
+            margin-bottom: 0 0 24px;
+        }
+        
+        .title1{
+            bottom: -10px;
+            left: 30px;
+            font-size: 18px;
+            color: #fff;
+            font-weight: bold;
+            display: inline-block;
+            text-align: left;
+            border: 1px solid #000000;
+            background-color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+        .home a {
+            display: flex;
+            justify-content: center;
+        }
+        .events{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 0;        
+            border-bottom: 1px solid #eaeaea;
+            border-top: 1px solid #eaeaea;
+        }
+        .more-link{
+            color: black;
+        }
+        .whatson{
+            padding: 0;
+        }
+        .event{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px 0;
+            border-bottom: 1px solid #eaeaea;            
+        }
+        .event-3{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px 0;                   
+        }
+
+        .listing-date{
+            max-width: 80px;            
+            margin: 0 15px;
+        }
+        .thedate{
+            font-size: 60px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .themonth{
+            font-size: 18px;
+            line-height: normal;
+            color: #57606f 
+        }
+        .listing-img{
+            max-width: 250px;
+            height: 141px;
+            margin: 0 15px;
+        }
+        .title{
+            font-size:28px;
+            font-weight: bold;            
+            margin: 15px 0;
+        }
+        .listing-decs{
+            margin: 0 15px;
+            width: 45%;
+        }
+        .listing-decs span{
+            font-size: 16px;
+            line-height: 25px;
+        }
+        .listing-decs p{
+            font-size: 16px;
+            line-height:25px;
+            
+        }
+        .time span{
+            font-size: 20px;
+            font-weight: 350;
+            text-align: start;
+        }
+        .img6{
+            width: 100%;
+        }
+        .sub{
+            padding: 60px 0;
+            background: #f4f4f4;
+        }
+        .member{
+            font-size: 30px;
+            text-transform: normal;
+            line-height: 1.1em;
+            font-weight: 800;
+            margin: 15px 0;
+            text-transform: uppercase;
+        }        
+        .text a.button{
+            font-size: 18px;
+            color: #fff;
+            font-weight: bold;
+            display: inline-block;
+            text-align: left;
+            border: 1px solid #000000;
+            background-color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        } 
+        .text a.button:hover{
+            font-size: 18px;
+            color: #000;
+            font-weight: bold;
+            display: inline-block;
+            text-align: left;
+            border: 1px solid #fff;
+            background-color: #fff;
+            padding: 8px 16px;
+        } 
+        a.button{
+            font-size: 18px;
+            color: #000;
+            font-weight: bold;
+            display: inline-block;
+            text-align: left;
+            border: 1px solid #000000;            
+            padding: 8px 16px;
+            text-decoration: none;
+        } 
+        a.button:hover{
+            font-size: 18px;
+            color: #fff;
+            font-weight: bold;
+            display: inline-block;
+            text-align: left;
+            border: 1px solid #000;
+            background-color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        } 
+        .subbtn{
+            padding: auto 0;
+        }       
+        footer{
+            padding: 60px 0;
+            background: #212528;
+            text-align: center;
+        }
+        footer img{
+            position: relative;
+            width: 90px;
+            height: auto;
+            vertical-align: middle;
+            border-style: none;
+        }
+        footer p{
+            font-size: 14px;
+            color: #fff;
+        }
+        .simon{            
+            margin: 30px 0;
+            padding: 30px 60px;
+            border-bottom: 1px solid #cccccc;
+            border-top: 1px solid #cccccc;
+            text-align: center;
+        }
+        .simon p:first-child{
+            font-size: 42px;
+            margin-bottom: 1rem;
+        }
+        .simon p{
+            color: #fff;
+            font-family: big-caslon-fb, serif;
+            font-weight: normal;
+            font-size: 16px;            
+            margin: 0;
+        }
+        .social svg{
+            width: 35px;
+            height: 35px;
+            color: white;
+            fill: currentColor;
+            margin: 10px;}
+        .social{margin: 0 0 30px;}
+        footer menu{display: block;}
+        .nav{    
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none;
+            
+            }
+        footer .menu li {
+            display: inline-block;
+            list-style-type: none;
+            margin: 0;
+            padding: 7px 10px;
+            font-size: 14px;            
+            }
+        footer .menu li a{color: #b5b5b5;}
+
+        @media (max-width: 500px){
+            .text{width: 100%;}
+
+            /* .carousel-caption{} */
+
+            .home{justify-content: center;}
+
+            .heading2{
+                flex-direction: column;
+                align-content: center;
+            }
+
+        }
+        @media (min-width: 501px) and (max-width: 1299px) {
+        .text{width: 100%;}
+
+        /* .carousel-caption{}  */
+
+        .home{justify-content: center;}
+
+        .heading2{
+                flex-direction: column;
+                align-content: center; 
+            }
+        }
+
+        @media (min-width: 1300px) {
+            .carousel-captions{
+            position: absolute;
+            right: 15%;
+            bottom: 100px;
+            left: 15%;
+            z-index: 10;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            color: #fff;
+            text-align: center;
+        }
+
+            .text{
+            width: 40%;
+            text-align: left;
+            padding: 40px;
+            background: #5fcec8;
+            z-index: 1;
+            position: relative;
+            color: #fff;
+        }
+
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="heading">
+                <div class="logo">
+                    <a href="https://www.londonlibrary.co.uk/">
+                        <img src="logo.svg" alt=""> 
+                    </a>
+                </div>                
+        <nav class="navbar navbar-expand-lg navbar-light  all-menu">
+                    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedCo ntent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>                     -->
+            <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
+                
+                <div class="sub-menu">
+                        <ul class="navbar-nav mr-auto">
+                            <li><a href="#">Search The Catalogue</a></li>
+                            <li><a href="#">eLibrary</a></li>
+                            <li><a href="#">My Account</a></li>
+                        </ul>
+                </div>
+                <div class="main-menu">                            
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-dark font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>                            
+                                <ul>
+                                    <div class="dropdown-menu" aria-labelledby="navbar Dropdown">
+                                        <div class="container-fluid drop">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        </div>
+                                    </div>
+                                </ul>                            
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-dark font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Collections</a>  
+                                <ul>
+                                    <div class="dropdown-menu" aria-labelledby="navbar Dropdown">
+                                        <div class="container drop">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        </div>
+                                    </div>
+                                </ul>                            
+                                </li>
+                                </ul>
+                                </li>
+                            </ul>
+                        </div>
+                </div>   
+            </div>                 
+        </nav>
+            </div>        
+        </div>
+    </header>
+<main>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner ">
+            <div class="carousel-item active">
+                    <img src="https://picsum.photos/2000/800?random-1" class="d-block w-100" alt="...">
+                <div class="carousel-captions d-md-block">  
+                    <div class="text">
+                            <h2>Amazing spaces to study, think and create</h2>
+                            <p>Inside the Library there’s a vast labyrinth of books, hidden corners and beautiful working spaces. From elegant reading rooms to atmospheric bookstacks, it’s a unique literary oasis in the heart of London.</p>
+                            <a href="#" class="button">Our Online Resources  ➔</a>
+                    </div>                                      
+                </div>            
+        </div>
+            <div class=" carousel-item ">
+                    <img src="https://picsum.photos/2000/800?random-2" class="d-block  w-100" alt="...">    
+                    <div class="carousel-captions d-md-block">  
+                        <div class="text">
+                                <h2>Amazing spaces to study, think and create</h2>
+                                <p>Inside the Library there’s a vast labyrinth of books, hidden corners and beautiful working spaces. From elegant reading rooms to atmospheric bookstacks, it’s a unique literary oasis in the heart of London.</p>
+                                <a href="#" class="button">Our Online Resources  ➔</a>
+                        </div>                                      
+                    </div>                  
+            </div>
+                <div class=" carousel-item">
+                    <img src="https://picsum.photos/2000/800?random-3" class="d-block  w-100" alt="...">  
+                    <div class="carousel-captions d-md-block">  
+                        <div class="text">
+                                <h2>Amazing spaces to study, think and create</h2>
+                                <p>Inside the Library there’s a vast labyrinth of books, hidden corners and beautiful working spaces. From elegant reading rooms to atmospheric bookstacks, it’s a unique literary oasis in the heart of London.</p>
+                                <a href="#" class="button">Our Online Resources  ➔</a>
+                        </div>                                      
+                    </div>                     
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+        </div>
+</main>
+    <div class="container ">
+        <div class="row justify-content-center">
+            <div class="home col">
+                
+                <a href="#">
+                    
+                    <img src="https://picsum.photos/350/200?random-1" alt="...">
+                    <h3>
+                    <span class="position-absolute title1">Search the Catalogue</span>
+                    </h3>
+                
+                </a>  
+                           
+            </div>
+            <div class="home col">
+                
+                <a href="#">
+                    <img src="https://picsum.photos/350/200?random-2" alt="...">
+                    <h3>
+                        <span class="position-absolute title1">Search the Catalogue</span>
+                    </h3>
+                </a>              
+            </div>
+            <div class="home col">
+                
+                <a href="#">
+                    <img src="https://picsum.photos/350/200?random-3" alt="...">
+                    <h3>
+                        <span class="position-absolute title1">Search the Catalogue</span>
+                    </h3>
+                </a>                
+            </div>
+            <div class="home col position-relative">
+                <a href="#">
+                    <img src="https://picsum.photos/350/200?random-4" alt="...">
+                    <h3>
+                        <span class="position-absolute title1">Search the Catalogue</span>
+                    </h3>
+                </a>                
+            </div>
+            <div class="home col position-relative">
+                <a href="#">
+                    <img src="https://picsum.photos/350/200?random-5" alt="...">
+                    <h3>
+                        <span class="position-absolute title1">Search the Catalogue</span>
+                    </h3>
+                </a>                
+            </div>
+            <div class="home col position-relative">
+                <a href="#">
+                    <img src="https://picsum.photos/350/200?random-6" alt="...">
+                    <h3>
+                        <span class="position-absolute title1">Search the Catalogue</span>
+                    </h3>
+                </a>                
+            </div><div class="home col position-relative">
+                <a href="#">
+                    <img src="https://picsum.photos/350/200?random-7" alt="...">
+                    <h3>
+                        <span class="position-absolute title1">Search the Catalogue</span>
+                    </h3>
+                </a>                
+            </div><div class="home col position-relative">
+                <a href="#">
+                    <img src="https://picsum.photos/350/200?random-8" alt="...">
+                    <h3>
+                        <span class="position-absolute title1">Search the Catalogue</span>
+                    </h3>
+                </a>                
+            </div><div class="home col position-relative">
+                <a href="#">
+                    <img src="https://picsum.photos/350/200?random-9" alt="...">
+                    <h3>
+                        <span class="position-absolute title1">Search the Catalogue</span>
+                    </h3>
+                </a>                
+            </div>
+        </div>
+    </div>
+    </div>
+    <section class="events">
+        <div class="container">
+            <div class="row">               
+                    <form action>
+                        <div class="heading heading2">
+                            <h2>UPCOMING EVENTS</h2>
+                            <a class="more-link" href="#" >See all events ➔</a>
+                        </div>
+                        <div class="content">
+                            <ul class="whatson">
+                                <li  class="event">
+                                    <div class="listing-date">
+                                        <span class="thedate">02</span>
+                                        <span class="themonth">SEP 2020</span>
+                                    </div>
+                                    <div class="listing-img">                                        
+                                        <a href="/whats-on/61-the-ratline-on-the-trail-of-a-nazi-fugitive">
+                                            <img src="https://picsum.photos/250/141?random-1"></a>
+                                    </div>
+                                    <div class="listing-decs">
+                                        <span>Public Events</span>
+                                        <h3 class="title">The Ratline: On the Trail of a Nazi Fugitive</h3>
+                                        <p><i>Philippe Sands with Elif Shafak on the life and mysterious death of Nazi
+                                                fugitive Otto von Wächter</i></p>
+                                    </div>
+                                    <div class="time">
+                                        <span>18:45 - 20:30</span>                                         
+                                    </div>
+                                </li>
+                                <li class="event">
+                                    <div class="listing-date">
+                                    <span class="thedate">10</span>
+                                    <span class="themonth">SEP 2020</span>
+                                </div>
+                                <div class="listing-img">                                        
+                                    <a href="/whats-on/61-the-ratline-on-the-trail-of-a-nazi-fugitive">
+                                        <img src="https://picsum.photos/250/141?random-2"></a>
+                                </div>
+                                <div class="listing-decs">
+                                    <span>Public Events</span>
+                                    <h3 class="title"> The Sanctuary of Art: Hisham Matar and Laura Cumming in conversation (Online - Free)</h3>
+                                    <p><i>These two acclaimed writers contemplate the relationship between art and the human condition.</i></p>
+                                </div>
+                                <div class="time">
+                                    <span>19:00 - 20:00</span>                                         
+                                </div></li>
+                                <li  class="event-3">
+                                    <div class="listing-date">
+                                        <span class="thedate">24</span>
+                                        <span class="themonth">SEP 2020</span>
+                                    </div>
+                                    <div class="listing-img">                                        
+                                        <a href="/whats-on/61-the-ratline-on-the-trail-of-a-nazi-fugitive">
+                                            <img src="https://picsum.photos/250/141?random-3"></a>
+                                    </div>
+                                    <div class="listing-decs">
+                                        <span>Public Events</span>
+                                        <h3 class="title">A Theatre for Dreamers</h3>
+                                        <p><i>Polly Samson discusses her spellbinding new novel, set amongst the artistic community of 1960s Hydra</i></p>
+                                    </div>
+                                    <div class="time">
+                                        <span>18:45 - 20:30</span>                                         
+                                    </div>
+                                </li>
+                            </ul>                         
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="events">
+    <div class="container">
+        <div class="row">
+            <div class="heading heading2">
+            <h2>LATEST NEWS</h2>
+            <a class="more-link" href="#" >See all events ➔</a>
+        </div>
+        <div class="home col position-relative">
+            <a href="#">
+                <img src="https://picsum.photos/350/200?random-10" alt="...">
+                <h3>
+                    <span class="position-absolute title1">Search the Catalogue</span>
+                </h3>
+            </a>                
+        </div>
+        <div class="home col position-relative">
+            <a href="#">
+                <img src="https://picsum.photos/350/200?random-11" alt="...">
+                <h3>
+                    <span class="position-absolute title1">Search the Catalogue</span>
+                </h3>
+            </a>                
+        </div><div class="home col position-relative">
+            <a href="#">
+                <img src="https://picsum.photos/350/200?random-12" alt="...">
+                <h3>
+                    <span class="position-absolute title1">Search the Catalogue</span>
+                </h3>
+            </a>                
+        </div>
+        </div>
+    </div>    
+ </section>
+ <section class="events">
+     <div class="container">
+         <div class="row justify-content-between">
+             <div class="col-md-7">
+                <img class="img6" src="join.jpg" alt="...">
+             </div>
+             <div class="col-md-4 ">
+                 <h2 class="member">Become a member OF THE LONDON LIBRARY</h2>
+                 <p>Members have access to over a million books and periodicals, a superb online offering and an unforgettable building in beautiful St. James's Square. 7,000 members, including some of the most familiar names in the literary world, find the Library’s resources invaluable. We would love you to join them.</p>
+                 <p>
+                     <a class="button" href="/join/join-online">Join Online</a>
+                 </p>
+             </div>
+         </div>
+     </div>
+ </section>
+<section class="sub">
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-md-8">
+                <h2 class="member">SUBSCRIBE TO OUR NEWSLETTER</h2>
+                <p>Sign up for London Library updates, information on upcoming events, membership offers and more.</p>
+            </div>
+            <div class="col-md-4 text-right">
+                <a class="button subbtn" href="#">Subscribe  ➔</a>
+                </div>        
+            </div>
+    </div>
+</section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <img src="logo-white.svg" alt="">
+                </div>
+                <div class="col-12">
+                    <div class="simon">
+                        <p>"One of the most thrilling places in the city for a reader or writer."</p>
+                        <p>Simon Callow</p>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="social">
+                        <svg class="icon-facebook">
+                            <use xlink:href="./icomoon/symbol-defs.svg#icon-facebook"></use>
+                          </svg>
+                          <svg class="icon-twitter">
+                            <use xlink:href="./icomoon/symbol-defs.svg#icon-twitter"></use>
+                          </svg>
+                          <svg class="icon-vimeo">
+                            <use xlink:href="./icomoon/symbol-defs.svg#icon-vimeo"></use>
+                          </svg>
+                          <svg class="icon-instagram">
+                            <use xlink:href="./icomoon/symbol-defs.svg#icon-instagram"></use>
+                          </svg>
+                        </div>
+                    <p>14 St James’s Square, London SW1Y 4LG | (020) 7766 4700 | reception@londonlibrary.co.uk</p>
+                    <p>© 2020 The London Library. All rights reserved. Charity No. 312175.</p>
+                        <div class="menu-footer ">
+                            <ul class="nav menu justify-content-center">
+                                <li class="item-335"><a href="/contact-us-now" >Contact &amp; Find Us </a></li>
+                                <li class="item-336 parent"><a href="/work-for-us" >Work for Us</a></li>
+                                <li class="item-813"><a href="/opening" >Opening </a></li>
+                                <li class="item-338"><a href="/terms-and-conditions" >Terms and Conditions</a></li>
+                                <li class="item-339"><a href="/privacypolicy" >Privacy Policy</a></li>
+                                <li class="item-340"><a href="/cookies-footer" >Cookies</a></li>
+                                <li class="item-426"><a href="/governance" >Governance</a></li>
+                                <li class="item-383"><a href="/trustee-intranet" >Trustee Intranet</a></li>
+                            </ul>
+                            <ul class="nav menu justify-content-center">
+                                <li><a target="_blank" href="https://artonezero.com">Website design by artonezero.com</a></li></ul>
+                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
